@@ -20,32 +20,28 @@ export const NavbarBody = styled.div`
     justify-content: space-between;
     list-style: none;
     padding: 0;
-
-    
-}
+  }
 `
 
-export const List = styled.li<{ selected?: boolean }>`
+export const List = styled.li<{ selected: boolean, path: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
   border: ${({ selected }) => selected ? `2px solid var(${"--neon-yellow"})` : 'none'};
   border-radius: 50%;
-
+  width: 54px;
+  height: 54px;
+  // background-color: ${({ selected }) => selected ? 'var(--neon-yellow)' : 'transparent'};
+  
   a {
-    width: 32px;
-    height: 32px;
     display: block;
     text-decoration: none;
     color: var(--black);
   }
 
   img {
-    fill: white;
     width: 32px;
     height: 32px;
-    object-fit: contain;
-    color: white;
   }
 `
