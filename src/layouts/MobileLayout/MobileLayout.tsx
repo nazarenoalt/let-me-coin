@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 import NavbarMobile from "../../components/NavbarMobile/NavbarMobile";
 
-export const MobileLayout = () => {
+const MobileLayout = () => {
   return (
     <div className="mobile-layout">
       <main>
@@ -13,3 +13,5 @@ export const MobileLayout = () => {
     </div>
   );
 };
+
+export default MobileLayout;

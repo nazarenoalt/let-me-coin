@@ -13,7 +13,7 @@ const pagesObjects: pageInterface[] = [
   { path: "/budgets", src: "./src/assets/icons/wallet.svg", selected: false },
   { path: "/", src: "./src/assets/icons/movements.svg", selected: true },
   { path: "/charts", src: "./src/assets/icons/chart.svg", selected: false },
-  { path: "/account", src: "./src/assets/icons/user-alt.svg", selected: false }
+  { path: "/user", src: "./src/assets/icons/user-alt.svg", selected: false }
 ]
 
 const NavbarMobile = () => {
