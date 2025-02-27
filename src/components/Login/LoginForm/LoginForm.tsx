@@ -3,8 +3,11 @@ import { Form, InputsContainer } from './LoginForm.styles';
 import TextInput from '../../../particles/TextInput/TextInput';
 import Button from '../../../particles/Button/Button';
 import { Link } from 'react-router';
+import { useTranslations } from '../../../utils/translate';
 
 const LoginForm = ({ setIsUserLogged }: { setIsUserLogged: (isLogged: boolean) => void }) => {
+  const { t } = useTranslations();
+
   const [userData, setUserData] = useState({
     email: '',
     password: ''
@@ -25,7 +28,7 @@ const LoginForm = ({ setIsUserLogged }: { setIsUserLogged: (isLogged: boolean) =
   return (
     <Form onSubmit={onFormSubmit}>
       <InputsContainer>
-        <label className="form-label" htmlFor="email">Email</label>
+        <label className="form-label" htmlFor="email">{t("Login.Email")}</label>
         <TextInput
           color="violet"
           id="email"
@@ -35,7 +38,7 @@ const LoginForm = ({ setIsUserLogged }: { setIsUserLogged: (isLogged: boolean) =
           onChange={handleChange}
           aria-required="true"
         />
-        <label className="form-label" htmlFor="password">Password</label>
+        <label className="form-label" htmlFor="password">{t("Login.Password")}</label>
         <TextInput
           color="violet"
           id="password"
@@ -47,9 +50,9 @@ const LoginForm = ({ setIsUserLogged }: { setIsUserLogged: (isLogged: boolean) =
         />
       </InputsContainer>
 
-      <Button type="submit">Log In</Button>
+      <Button type="submit">{t("Login.Submit")}</Button>
       <span className="signup-span">
-        ¿Not a user? <Link to="/signup">Sign up here</Link>
+      {t("Login.NotAUser")} <Link to="/signup">{t("Login.SignUpHere")}</Link>
       </span>
     </Form>
   )

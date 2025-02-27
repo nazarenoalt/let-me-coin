@@ -1,5 +1,9 @@
 {
   "App.Title": "Let Me Coin",
-  "HomePage.Title": "Home",
+  "Login.Email": "Email",
+  "Login.Password": "Password",
+  "Login.Submit": "Login",
+  "Login.NotAUser": "Not a user?",
+  "Login.SignUpHere": "Sign up here!",
   "CategoriesPage.Title": "Categories"
 }
