@@ -1,14 +1,11 @@
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router'
+import LoginComponent from '../../components/Login/LoginComponent/LoginComponent';
 
 const LoginPage = () => {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate('/movements');
-  }, [navigate])
-  
-  return null;
+  return (
+    <>
+      <LoginComponent />
+    </>
+  )
 }
 
 export default LoginPage

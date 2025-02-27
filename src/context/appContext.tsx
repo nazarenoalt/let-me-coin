@@ -1,16 +1,30 @@
 import React, { createContext, useState } from "react";
 const appContext = createContext({});
 
+export interface appContextInterface {
+  language: string;
+  setLanguage: React.Dispatch<React.SetStateAction<string>>;
+  colorMap: { [key: string]: string }
+} 
+
 const AppProvider = ({ children }: { children: React.ReactNode}) => {
   const defaultLanguage = localStorage.getItem("language") || "en";
   const [language, setLanguage] = useState(defaultLanguage);
 
-  const value: {
-    language: string,
-    setLanguage: React.Dispatch<React.SetStateAction<string>>
-  } = {
+  const colorMap: { [key: string]: string } = {
+    yellow: "neon-yellow",
+    violet: "neon-violet",
+    blue: "neon-blue",
+    red: "neon-red",
+    green: "neon-green",
+    orange: "neon-orange",
+    default: "neon-violet"
+  };
+  
+  const value: appContextInterface = {
     language,
-    setLanguage
+    setLanguage,
+    colorMap
   }
   return (
     <appContext.Provider value={value}>

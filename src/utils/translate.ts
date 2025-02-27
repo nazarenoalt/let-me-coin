@@ -9,7 +9,7 @@ const translationsMap: { [key: string]: LanguageType } = {
 export const supportedLanguages = Object.keys(translationsMap);
 const firstLanguage = "en";
 
-export const useTranslations = ({ lang }: { lang: string | null }) => {
+export const useTranslations = (lang?: string) => {
   setLanguage(lang);
   const translation: LanguageType = translationsMap[lang || getDefaultLanguage() || firstLanguage];
   const t = (key: string) => {
@@ -28,12 +28,15 @@ export const getDefaultLanguage = () => {
   return supportedLanguages.includes(navigatorLang) ? navigatorLang : firstLanguage;
 }
 
-const setLanguage = (lang: string | null) => {
+const setLanguage = (lang: string | undefined) => {
   const savedLanguage = localStorage.getItem("language");
+  console.log(savedLanguage, lang)
+
   if(lang) {
     localStorage.setItem("language", lang);
   }
   if(!lang && !savedLanguage) {
+    console.log("inside no lang")
     localStorage.setItem("language", getDefaultLanguage());
   }
 }
